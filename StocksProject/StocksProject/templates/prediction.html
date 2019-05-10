@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+    <title>Price Prediction</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Navigation Bar -->
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+              <form class="form-inline" action="/">
+                    <input  type="submit" value="Home" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+            </form>
+            <form action="/sentimentopt" method=POST" >
+              <input  type="submit" value="Sentiment" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+
+            </form>
+            <form action="/priceprediction" method=POST" >
+              <input  type="submit" value="Price" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+
+            </form>
+
+            </div><!-- /input-group -->
+
+        </div><!-- /.col-lg-6 -->
+    </div>
+
+
+
+      <main role="main">
+
+          <section class="jumbotron text-center" style="background-color: #fff;">
+            <div class="container" style="padding-left:200px;padding-right:200px;margin-bottom:-50px;">
+              <h1 class="jumbotron-heading" style="padding-bottom:10px;">Predicting ETF Prices</h1>
+              <p class="lead text-muted">Working with historical ETF data, we've implemented a mix of machine
+                 learning algorithms, including averaging and linear regression, to predict the future price of the stocks of your choosing.</p>
+            </div>
+          </section>
+
+          <section class="jumbotron text-center bg-light" >
+            <p class="lead text-muted"> <strong>Select a maximum of 5 stocks to create your portfolio and compare stocks:</strong></p>
+            <form method="POST" action = "/priceopt">
+                 <select id = "option" name="option" width="300px" multiple>
+                    {% for o in option_list %}
+                      <option value="{{ o }}" SELECTED>{{ o }}</option>
+                    {% endfor %}
+                </select>
+                <input type="number" name = "daysForProjection">
+                <br></br>
+                <input type="submit" value="Submit">
+                      <!--  <button id="filter-btn" type="submit" class="btn btn-primary my-2" style="background-color: #45BBAA; border-color:#45BBAA;">Submit</button> -->
+              </form>
+              </div>
+
+            </section>
+
+                       <!-- <select id="selDataset" onchange="optionChanged(this.value)"></select>-->
+
+
+
+        </main>
+    </body>
+</html>

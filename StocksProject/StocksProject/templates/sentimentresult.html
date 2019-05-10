@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <title>Sentiment Analysis</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Navigation Bar -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+              <form class="form-inline" action="/">
+                    <input  type="submit" value="Home" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+            </form>
+            <form action="/sentimentopt" method=POST" >
+              <input  type="submit" value="Sentiment" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+
+            </form>
+            <form action="/priceprediction" method=POST" >
+              <input  type="submit" value="Price" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+
+            </form>
+
+            </div><!-- /input-group -->
+
+        </div><!-- /.col-lg-6 -->
+    </div>
+        
+        <main role="main">
+        
+          <section class="jumbotron text-center" style="background-color: #fff;">
+            <div class="container" style="padding-left:200px;padding-right:200px;margin-bottom:-50px;">
+              <h1 class="jumbotron-heading" style="padding-bottom:10px;">Sentiment Analysis</h1>
+              <p class="lead text-muted">One way to analyze stocks is to quantify the general sentiment around them. 
+                We used Twitter to see what people are saying in real time and narrow focus to stock market investor content.
+              </p>
+             
+                
+                
+            </div>
+          </section>
+        
+          <!--  <div class="album py-5 bg-light">-->
+
+           <!-- <div class="container"> -->
+                <section class="jumbotron text-center bg-light" >
+
+                <p class="lead text-muted">Select the Investor's Twitter feed to run analysis:
+                  </p>
+              <!--  <center>  <h3 class="jumbotron-heading text-secondary" style="margin-bottom:20px;margin-top:-30px;">Visualizations</h3></center> --> 
+             <!--  <form method="POST" action="/send" >--> 
+             <!--  <form method="POST" action="#" ></form> --> 
+             <form method="POST" action="/sentimentresultsend" >
+                <select  id="invselect" name="invselect">
+                        <option value="ReformedBroker">ReformedBroker</option>
+                        <option value="awealthofcs">awealthofcs</option>
+                        <option value="jasonzweigwsj">jasonzweigwsj</option>
+                    <option value="FANewsdesk">FANewsdesk</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+                <!--  <button id="filter-btn" type="submit" class="btn btn-primary my-2" style="background-color: #45BBAA; border-color:#45BBAA;">Submit</button> -->
+              </form>
+
+            
+
+
+
+
+              <section class="jumbotron text-center bg-light" >
+
+
+
+                  <div class="row">
+          
+                          <div class="col-md-12">
+                              <h3><b>Prediction of ALL the sentiments collected</b></h3></div> </br> </br>
+                              <div class="col-md-6">
+                              <img src="./static/{{selectedname[0]}}">
+                              </div>
+                              <!--<img id="dimen" src= "{ url_for('static',filename=selectedname[0]|safe )}}" ></img></div>-->
+                              <div class="col-xs-6">
+
+                                <img src="./static/{{selectedname[1]}}">
+                              </div>
+                              <!--<img id="dimen1" src= "{ url_for('static',filename=selectedname[1]|safe )}}" ></img></div>-->
+
+                  </div>
+                  <div class="row">
+                              <div class="col-md-6">
+                                <img src="./static/{{selectedname[2]}}">
+                              </div>
+                              <!--<img id="dimen2" src= "{ url_for('static',filename=selectedname[2]|safe )}}" ></img></div>-->
+
+                  </div>
+          
+              </section>
+          
+          
+          </div>
+        
+
+</div>
+          
+                </section>
+                
+                 
+             
+                
+             <!-- </div>  -->
+            </div>
+          </div>
+        
+        </main>
+
+
+
+  </body>
+  </html>

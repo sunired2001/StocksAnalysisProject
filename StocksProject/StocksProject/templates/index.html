@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+    <title>Landing Page</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+
+
+
+
+    <!-- Navigation Bar -->
+
+    <div class="row">
+      <div class="col-lg-6">
+          <div class="input-group">
+            <form class="form-inline" action="/">
+                  <input  type="submit" value="Home" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+          </form>
+          <form action="/sentimentopt" method=POST" >
+            <input  type="submit" value="Sentiment" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+
+          </form>
+          <form action="/priceprediction" method=POST" >
+            <input  type="submit" value="Price" class="btn btn-primary btn-lg" type="button" style="background-color: #45BBAA; border-color:#45BBAA;margin-right:10px;"></input>
+
+          </form>
+
+          </div><!-- /input-group -->
+
+      </div><!-- /.col-lg-6 -->
+  </div>
+
+
+
+        
+          <main role="main">
+        
+          <section class="jumbotron text-center" style="background-color: #fff;">
+            <div class="container" style="padding-left:200px;padding-right:200px;margin-bottom:-50px;">
+              <h1 class="jumbotron-heading" style="padding-bottom:10px;">Predicting the Stock Market</h1>
+              <p class="lead text-muted">The purpose of the project is to predict the stock market using machine learning.  </p>
+                  <p class="lead text-muted">We chose to focus our analysis on exchange-traded funds (ETFs), which are investment funds traded on stock exchanges, much like stocks.
+              </p>
+              <form  action="/sentimentsend">
+              <input class="btn btn-secondary my-2" type="submit" value="Sentiment">
+              </form>
+              
+              <form  action="/priceprediction">
+                <input class="btn btn-secondary my-2" type="submit" value="Price">
+              </form>
+              <!--  <a href="prediction.html" class="btn btn-secondary my-2">Price</a> -->
+              </p>
+            </div>
+          </section>
+        
+          <div class="album py-5 bg-light">
+
+            <div class="container">
+              <!--  <center>  <h3 class="jumbotron-heading text-secondary" style="margin-bottom:20px;margin-top:-30px;">Visualizations</h3></center> --> 
+            </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>  </br>
+             
+                
+              </div>
+            </div>
+          </div>
+        
+        </main>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="static/js/dropdowndirect.js"></script>
+
+  </body>
+  </html>
